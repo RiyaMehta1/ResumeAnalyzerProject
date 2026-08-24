@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✦
+            </div>
+
+            <div>
+                <h1>Resume Analyzer</h1>
+                <p>AI-powered ATS & Skill Match</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="hero">
+
+        <section class="hero-text">
+
+            <h2>
+                Land more interviews with an
+                <span>ATS-friendly resume</span>
+            </h2>
+
+            <p>
+                Upload your resume PDF, paste the job description and receive
+                ATS score, matched skills, missing skills and suggestions.
+            </p>
+
+        </section>
+
+
+        <section class="analyzer-card">
+
+            <div class="card-title">
+                <h3>Analyze Your Resume</h3>
+            </div>
+
+
+            <form id="resumeForm">
+
+                <!-- FIX: wrap the two fields in .form-grid so the CSS grid applies -->
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label for="resumeFile">
+                            Resume (PDF)
+                        </label>
+
+                        <div class="upload-box" id="uploadBox">
+
+                            <input
+                                    type="file"
+                                    id="resumeFile"
+                                    accept=".pdf"
+                                    hidden>
+
+                            <div class="upload-content">
+
+                                <p class="file-name" id="fileName">
+                                    Drop your PDF here or click to upload
+                                </p>
+
+                                <span class="file-meta" id="fileMeta">
+                                    PDF only
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="jobDescription">
+                            Job Description
+                        </label>
+
+                        <textarea
+                                id="jobDescription"
+                                rows="8"
+                                placeholder="Paste complete job description here..."></textarea>
+
+                    </div>
+
+                </div><!-- end .form-grid -->
+
+
+                <button
+                        type="submit"
+                        id="analyzeBtn"
+                        class="primary-btn"
+                        style="width:100%; margin-top:18px;">
+
+                    Analyze With AI
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="analyzer-card" style="margin-top:30px;">
+
+            <h3>Analysis Result</h3>
+
+            <div id="resultBox">
+
+                <h2>ATS Score : --%</h2>
+
+                <p>
+                    Upload a resume and click Analyze With AI.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script defer src="app.js"></script>
+
+</body>
+</html>
